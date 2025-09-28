@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:psi_aluma/pages/inicity/inicity.dart';
-import 'package:psi_aluma/pages/register/login.dart';
+import 'package:psi_aluma/pages/register/start_option.dart';
 import 'package:psi_aluma/pages/register/register_login.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Inicity(),
-        '/login': (context) => Login(),
+        '/starOption': (context) => StarOption(),
         '/register': (context) => RegisterLogin(),
       },
     );
