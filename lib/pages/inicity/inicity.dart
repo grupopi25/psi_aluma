@@ -7,17 +7,22 @@ class Inicity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(gradient: GradientsColors.primaryGradient),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.asset('assets/images/logo.png', height: 150.0),
-            SizedBox(height: 14.0),
-            Center(child: Text('ALUMA', style: AppColors.white)),
-          ],
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.pushNamed(context, '/login');
+      },
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(gradient: GradientsColors.primaryGradient),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.asset('assets/images/logo.png', height: 150.0),
+              SizedBox(height: 14.0),
+              Center(child: Text('ALUMA', style: AppColors.white)),
+            ],
+          ),
         ),
       ),
     );

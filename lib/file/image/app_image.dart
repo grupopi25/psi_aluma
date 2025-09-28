@@ -1,3 +1,12 @@
+import 'package:flutter/material.dart';
+
 class AppImage {
-  static String logo = 'assets/images/logo.png';
+  static Image load(String assetPath, {double? width, double? height}) {
+    return Image.asset(
+      assetPath,
+      width: width,
+      height: height,
+      fit: BoxFit.contain,
+    );
+  }
 }
