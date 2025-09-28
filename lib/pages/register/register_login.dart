@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:psi_aluma/file/buttons/app_button.dart';
+import 'package:psi_aluma/file/buttons/icon_button_app.dart';
+import 'package:psi_aluma/file/buttons/primary_button_app.dart';
 
 import 'package:psi_aluma/file/colors/gradients_colors.dart';
 import 'package:psi_aluma/file/image/app_image.dart';
@@ -25,27 +26,11 @@ class _RegisterLoginState extends State<RegisterLogin> {
               SizedBox(height: 42),
               Row(
                 children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.chevron_left,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-
-                  SizedBox(width: 15),
-                  Align(
-                    child: Text(
-                      'Voltar',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
+                  IconButtonApp.backButton(
+                    context: context,
+                    icon: Icons.chevron_left,
+                    color: Colors.white,
+                    label: 'Voltar',
                   ),
                 ],
               ),
@@ -53,7 +38,7 @@ class _RegisterLoginState extends State<RegisterLogin> {
               Container(
                 padding: EdgeInsets.all(22),
                 child: AppText.titulo(
-                  'Preecha os campos abaixo para melhor experência.',
+                  'Preecha os campos abaixo para elhor Experiência.',
                 ),
               ),
               SizedBox(height: 46),
@@ -93,7 +78,11 @@ class _RegisterLoginState extends State<RegisterLogin> {
                       ),
                     ),
                     SizedBox(height: 96),
-                    CustomButton.primaryButton(context, 'Criar Conta', () {}),
+                    CustomButton.primaryButton(
+                      context: context,
+                      text: 'Criar Conta',
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),

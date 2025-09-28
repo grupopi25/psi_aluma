@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:psi_aluma/file/buttons/app_button.dart';
+import 'package:psi_aluma/file/buttons/primary_button_app.dart';
+import 'package:psi_aluma/file/buttons/second_button_app.dart';
 import 'package:psi_aluma/file/colors/gradients_colors.dart';
 import 'package:psi_aluma/file/fonts_sizes/fonts.dart';
 import 'package:psi_aluma/file/image/app_image.dart';
@@ -23,13 +24,13 @@ class StarOption extends StatelessWidget {
             SizedBox(height: 111.0),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 49),
-              child: AppButton.primaryButton(context),
+              child: PrimaryButtonApp.primaryButton(context),
             ),
             SizedBox(height: 21),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 49),
 
-              child: AppButtonSecund.secondButton,
+              child: SecondButtonaPP.secondButton(context),
             ),
           ],
         ),

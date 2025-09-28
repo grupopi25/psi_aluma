@@ -1,10 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-class AppButton {
+class PrimaryButtonApp {
   static FloatingActionButton primaryButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/register');
+        Navigator.pushNamed(context, '/login');
       },
       backgroundColor: Colors.white,
       child: Text(
@@ -19,50 +21,32 @@ class AppButton {
   }
 }
 
-class AppButtonSecund {
-  static final secondButton = OutlinedButton(
-    onPressed: () {},
-    style: OutlinedButton.styleFrom(
-      side: BorderSide(color: Colors.white, width: 2),
-      padding: EdgeInsets.all(15),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusGeometry.circular(15),
-      ),
-    ),
-    child: Text(
-      texto('Criar Conta').conteudo,
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  );
-}
-
 class texto {
   final String conteudo;
   texto(this.conteudo);
 }
 
 class CustomButton {
-  static Widget primaryButton(
-    BuildContext context,
-    String text,
-    VoidCallback onPressed,
-  ) {
+  static Widget primaryButton({
+    required BuildContext context,
+    required String text,
+    required VoidCallback onPressed,
+    double width = 230,
+    double height = 60,
+  }) {
     return SizedBox(
-      width: 230,
-      height: 60,
+      width: width,
+      height: height,
       child: FloatingActionButton(
         onPressed: onPressed,
         backgroundColor: Colors.white,
         elevation: 4,
+
         child: Text(
           text,
           style: const TextStyle(
             color: Color(0xFF34629F),
-            fontSize: 20,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -9,7 +9,7 @@ class Inicity extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/login');
+        Navigator.pushNamed(context, '/starOption');
       },
       child: Scaffold(
         body: Container(
