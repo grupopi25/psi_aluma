@@ -3,8 +3,8 @@ import 'package:psi_aluma/file/buttons/app_button.dart';
 
 import 'package:psi_aluma/file/colors/gradients_colors.dart';
 import 'package:psi_aluma/file/image/app_image.dart';
-import 'package:psi_aluma/pages/forms/app_form.dart';
-import 'package:psi_aluma/pages/text/app_text.dart';
+import 'package:psi_aluma/file/forms/app_form.dart';
+import 'package:psi_aluma/file/text/app_text.dart';
 
 class RegisterLogin extends StatefulWidget {
   const RegisterLogin({super.key});
@@ -65,6 +65,7 @@ class _RegisterLoginState extends State<RegisterLogin> {
                       child: AppForm.build(
                         hintText: 'Nome e Sobrenome',
                         labelText: 'Nome',
+                        validator: null,
                       ),
                     ),
                     SizedBox(height: 30),
