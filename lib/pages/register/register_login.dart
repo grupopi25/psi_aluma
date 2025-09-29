@@ -20,86 +20,96 @@ class _RegisterLoginState extends State<RegisterLogin> {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(gradient: GradientsColors.primaryGradient),
-          child: Column(
-            children: [
-              SizedBox(height: 42),
-              Row(
-                children: [
-                  IconButtonApp.backButton(
-                    context: context,
-                    icon: Icons.chevron_left,
-                    color: Colors.white,
-                    label: 'Voltar',
-                  ),
-                ],
-              ),
-              SizedBox(width: 85),
-              Container(
-                padding: EdgeInsets.all(22),
-                child: AppText.titulo(
-                  'Preecha os campos abaixo para elhor Experiência.',
-                ),
-              ),
-              SizedBox(height: 46),
-              Form(
-                child: Column(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 10),
+                Row(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: AppForm.build(
-                        hintText: 'Nome e Sobrenome',
-                        labelText: 'Nome',
-                        validator: null,
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: AppForm.build(
-                        hintText: 'E-mail',
-                        labelText: 'Email',
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: AppForm.build(
-                        hintText: 'CPF - apenas números',
-                        labelText: 'CPF',
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: AppForm.build(
-                        hintText: 'Senha',
-                        labelText: 'Senha',
-                      ),
-                    ),
-                    SizedBox(height: 96),
-                    CustomButton.primaryButton(
+                    IconButtonApp.backButton(
                       context: context,
-                      text: 'Criar Conta',
-                      onPressed: () {},
+                      icon: Icons.chevron_left,
+                      color: Colors.white,
+                      label: 'Voltar',
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: 53),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 15,
-                children: [
-                  AppImage.load('assets/images/logo.png', height: 30),
-                  AppText.titulo(
-                    'Aluma',
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
+                SizedBox(height: 00),
+                Container(
+                  padding: EdgeInsets.all(22),
+                  child: AppText.titulo(
+                    'Preecha os Campos Abaixo Para Melhor Experiência.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ],
-              ),
-            ],
+                ),
+                SizedBox(height: 46),
+                Form(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        child: AppForm.build(
+                          hintText: 'Nome e Sobrenome',
+                          labelText: 'Nome',
+                          validator: null,
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        child: AppForm.build(
+                          hintText: 'E-mail',
+                          labelText: 'Email',
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        child: AppForm.build(
+                          hintText: 'CPF - apenas números',
+                          labelText: 'CPF',
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        child: AppForm.build(
+                          hintText: 'Senha',
+                          labelText: 'Senha',
+                        ),
+                      ),
+                      SizedBox(height: 56),
+                      CustomButton.primaryButton(
+                        context: context,
+                        text: 'Criar Conta',
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 15,
+                  children: [
+                    AppImage.load('assets/images/logo.png', height: 30),
+                    AppText.titulo(
+                      'Aluma',
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
