@@ -27,8 +27,7 @@ class _LoginState extends State<Login> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            width: double.infinity,
-
+            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
               gradient: GradientsColors.primaryGradient,
             ),
@@ -44,6 +43,7 @@ class _LoginState extends State<Login> {
                         'Preencha os Campos Abaixo Para Melhor Experiência',
                       ),
                     ),
+
                     SizedBox(height: 26),
                     AppForm.build(
                       hintText: 'Email',

@@ -37,7 +37,7 @@ class _RegisterLoginState extends State<RegisterLogin> {
                     ),
                   ],
                 ),
-                SizedBox(height: 00),
+
                 Container(
                   padding: EdgeInsets.all(22),
                   child: AppText.titulo(
