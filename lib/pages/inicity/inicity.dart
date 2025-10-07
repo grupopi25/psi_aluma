@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:psi_aluma/file/colors/App_colors.dart';
+import 'package:psi_aluma/file/colors/app_colors.dart';
 import 'package:psi_aluma/file/colors/gradients_colors.dart';
 
 class Inicity extends StatelessWidget {

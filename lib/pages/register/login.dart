@@ -15,7 +15,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool _senhaAtiva = true;
-  void _Password() {
+  void  _password() {
     setState(() {
       _senhaAtiva = !_senhaAtiva;
     });
@@ -58,7 +58,7 @@ Widget build(BuildContext context) {
                       _senhaAtiva ? Icons.visibility_off : Icons.visibility,
                       color: Colors.white,
                     ),
-                    onPressed: _Password,
+                    onPressed: _password,
                   ),
                 ),
                 const SizedBox(height: 11),
@@ -89,7 +89,7 @@ Widget build(BuildContext context) {
                           _senhaAtiva ? Icons.visibility_off : Icons.visibility,
                           color: Colors.white,
                         ),
-                        onPressed: _Password,
+                        onPressed: _password,
                       ),
                     ),
                     SizedBox(height: 11),

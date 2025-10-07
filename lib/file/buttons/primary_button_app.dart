@@ -1,5 +1,4 @@
-import 'dart:ui';
-import 'package:psi_aluma/pages/register/login.dart';
+
 
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class PrimaryButtonApp {
       },
       backgroundColor: Colors.white,
       child: Text(
-        texto('Entrar').conteudo,
+        Texto('Entrar').conteudo,
         style: const TextStyle(
           color: Color(0xFF34629F),
           fontSize: 22,
@@ -22,9 +21,9 @@ class PrimaryButtonApp {
   }
 }
 
-class texto {
+ class  Texto {
   final String conteudo;
-  texto(this.conteudo);
+  Texto(this.conteudo);
 }
 
 class CustomButton {
