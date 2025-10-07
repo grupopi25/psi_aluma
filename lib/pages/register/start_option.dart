@@ -13,27 +13,29 @@ class StarOption extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(gradient: GradientsColors.primaryGradient),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(height: 138.0),
-            AppImage.load('assets/images/logo.png', height: 150),
-            SizedBox(height: 19.0),
-            Align(child: Text('Bem Vindo(a) ao', style: Fonts.font24)),
-            Align(child: Text('ALUMA!', style: Fonts.font24)),
-            SizedBox(height: 111.0),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 49),
-              child: PrimaryButtonApp.primaryButton(context),
-            ),
-            SizedBox(height: 21),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 49),
-
-              child: SecondButtonaPP.secondButton(context),
-            ),
-          ],
-        ),
+        child: ListView(
+          children: [ Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 138.0),
+              AppImage.load('assets/images/logo.png', height: 150),
+              SizedBox(height: 19.0),
+              Align(child: Text('Bem Vindo(a) ao', style: Fonts.font24)),
+              Align(child: Text('ALUMA!', style: Fonts.font24)),
+              SizedBox(height: 111.0),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 49),
+                child: PrimaryButtonApp.primaryButton(context),
+              ),
+              SizedBox(height: 21),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 49),
+          
+                child: SecondButtonaPP.secondButton(context),
+              ),
+            ],
+          ),
+       ] ),
       ),
     );
   }

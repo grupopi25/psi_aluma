@@ -26,7 +26,7 @@ class _RegisterLoginState extends State<RegisterLogin> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Row(
                   children: [
                     IconButtonApp.backButton(
@@ -37,13 +37,13 @@ class _RegisterLoginState extends State<RegisterLogin> {
                     ),
                   ],
                 ),
-                SizedBox(height: 00),
+                SizedBox(height: 20),
                 Container(
                   padding: EdgeInsets.all(22),
                   child: AppText.titulo(
                     'Preecha os Campos Abaixo Para Melhor Experiência.',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 23,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -95,7 +95,7 @@ class _RegisterLoginState extends State<RegisterLogin> {
                   ),
                 ),
 
-                SizedBox(height: 30),
+                SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   spacing: 15,
