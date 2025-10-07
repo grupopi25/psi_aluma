@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
     });
   }
 
-<<<<<<< HEAD
+
  @override
 Widget build(BuildContext context) {
   return SafeArea(
@@ -34,19 +34,8 @@ Widget build(BuildContext context) {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:  16.0,vertical: 20), // espaçamento padrão
-=======
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              gradient: GradientsColors.primaryGradient,
-            ),
->>>>>>> 634a1d139ac5bdbf7067c3b2ee77278e11bc574c
+            padding: const EdgeInsets.symmetric(horizontal:  16.0,vertical: 20), 
+
             child: Column(
               children: [
                 SizedBox(height: 30,),
@@ -76,8 +65,7 @@ Widget build(BuildContext context) {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-<<<<<<< HEAD
-=======
+
                     Container(
                       padding: EdgeInsets.only(left: 30, right: 30),
                       child: AppText.titulo(
@@ -124,7 +112,7 @@ Widget build(BuildContext context) {
                       onPressed: () {},
                     ),
                     SizedBox(height: 30),
->>>>>>> 634a1d139ac5bdbf7067c3b2ee77278e11bc574c
+
                     AppText.titulo(
                       'Esqueceu a senha?',
                       style: TextStyle(fontSize: 18, color: Colors.white60),
