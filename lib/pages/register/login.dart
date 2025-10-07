@@ -21,30 +21,70 @@ class _LoginState extends State<Login> {
     });
   }
 
+<<<<<<< HEAD
+ @override
+Widget build(BuildContext context) {
+  return SafeArea(
+    child: Scaffold(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          gradient: GradientsColors.primaryGradient,
+        ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal:  16.0,vertical: 20), // espaçamento padrão
+=======
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            width: double.infinity,
-
+            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
               gradient: GradientsColors.primaryGradient,
             ),
+>>>>>>> 634a1d139ac5bdbf7067c3b2ee77278e11bc574c
             child: Column(
               children: [
                 SizedBox(height: 30,),
                 Row(children: [IconButtonApp.backButton(context: context)]),
-                SizedBox(height: 35),
-                Column(
+                const SizedBox(height: 105),
+                AppText.titulo('Preencha os Campos Abaixo Para Melhor Experiência'),
+                const SizedBox(height: 26),
+                AppForm.build(
+                  hintText: 'Email',
+                  labelText: 'Digite seu e-mail',
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 10),
+                AppFormPassword.build(
+                  hintText: 'Digite sua Senha',
+                  labelText: 'Senha',
+                  senhaAtiva: _senhaAtiva,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _senhaAtiva ? Icons.visibility_off : Icons.visibility,
+                      color: Colors.white,
+                    ),
+                    onPressed: _Password,
+                  ),
+                ),
+                const SizedBox(height: 11),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+<<<<<<< HEAD
+=======
                     Container(
                       padding: EdgeInsets.only(left: 30, right: 30),
                       child: AppText.titulo(
                         'Preencha os Campos Abaixo Para Melhor Experiência',
                       ),
                     ),
+
                     SizedBox(height: 26),
                     AppForm.build(
                       hintText: 'Email',
@@ -84,40 +124,53 @@ class _LoginState extends State<Login> {
                       onPressed: () {},
                     ),
                     SizedBox(height: 30),
+>>>>>>> 634a1d139ac5bdbf7067c3b2ee77278e11bc574c
                     AppText.titulo(
-                      'ou cadastre-se com',
-                      style: TextStyle(color: Colors.white70, fontSize: 15),
+                      'Esqueceu a senha?',
+                      style: TextStyle(fontSize: 18, color: Colors.white60),
                     ),
-                    SizedBox(height: 20),
-                    Row(
-                      spacing: 40,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AppImage.load('assets/images/facebook.png', width: 35),
-                        AppImage.load('assets/images/X-Logo.png', width: 35),
-                        AppImage.load('assets/images/google.png', width: 35),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/register');
-                      },
-                      child: AppText.titulo(
-                        'Cadastrar-se Agora!',
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                      ),
-                    ),
-                    SizedBox(height: 40),
-                    Row(
-                      spacing: 10,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AppImage.load('assets/images/logo.png', width: 30),
-                        AppText.titulo('ALUMA'),
-                      ],
-                    ),
+                  ],
+                ),
+                const SizedBox(height: 27),
+                CustomButton.primaryButton(
+                  context: context,
+                  text: 'Entrar',
+                  onPressed: () {},
+                ),
+                const SizedBox(height: 30),
+                AppText.titulo(
+                  'ou cadastre-se com',
+                  style: TextStyle(color: Colors.white70, fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppImage.load('assets/images/facebook.png', width: 35),
+                    const SizedBox(width: 40),
+                    AppImage.load('assets/images/X-Logo.png', width: 35),
+                    const SizedBox(width: 40),
+                    AppImage.load('assets/images/google.png', width: 35),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
+                  child: AppText.titulo(
+                    'Cadastrar-se Agora!',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+                const SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    
+                    AppImage.load('assets/images/logo.png', width: 30),
+                    const SizedBox(width: 10),
+                    AppText.titulo('ALUMA'),
                   ],
                 ),
               ],
