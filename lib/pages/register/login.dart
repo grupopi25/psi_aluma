@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:psi_aluma/file/buttons/icon_button_app.dart';
 import 'package:psi_aluma/file/buttons/primary_button_app.dart';
-import 'package:psi_aluma/file/colors/gradients_colors.dart';
+import 'package:psi_aluma/file/colors/colors.dart';
 import 'package:psi_aluma/file/forms/app_form.dart';
 import 'package:psi_aluma/file/image/app_image.dart';
 import 'package:psi_aluma/file/text/app_text.dart';
@@ -15,158 +14,172 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool _senhaAtiva = true;
-  void  _password() {
+  void _password() {
     setState(() {
       _senhaAtiva = !_senhaAtiva;
     });
   }
 
-
- @override
-Widget build(BuildContext context) {
-  return SafeArea(
-    child: Scaffold(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: GradientsColors.primaryGradient,
-        ),
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:  16.0,vertical: 20), 
-
-            child: Column(
+        decoration: BoxDecoration(color: AppColors.azul),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
               children: [
-                SizedBox(height: 30,),
-                Row(children: [IconButtonApp.backButton(context: context)]),
-                const SizedBox(height: 105),
-                AppText.titulo('Preencha os Campos Abaixo Para Melhor Experiência'),
-                const SizedBox(height: 26),
-                AppForm.build(
-                  hintText: 'Email',
-                  labelText: 'Digite seu e-mail',
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                const SizedBox(height: 10),
-                AppFormPassword.build(
-                  hintText: 'Digite sua Senha',
-                  labelText: 'Senha',
-                  senhaAtiva: _senhaAtiva,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _senhaAtiva ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.white,
-                    ),
-                    onPressed: _password,
-                  ),
-                ),
-                const SizedBox(height: 11),
+                SizedBox(height: 30),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-
-                    Container(
-                      padding: EdgeInsets.only(left: 30, right: 30),
-                      child: AppText.titulo(
-                        'Preencha os Campos Abaixo Para Melhor Experiência',
-                      ),
-                    ),
-
-                    SizedBox(height: 26),
-                    AppForm.build(
-                      hintText: 'Email',
-                      labelText: 'Digite seu e-mail',
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    SizedBox(height: 10),
-                    AppFormPassword.build(
-                      hintText: 'Digite sua Senha',
-                      labelText: 'Senha ',
-                      senhaAtiva: _senhaAtiva,
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _senhaAtiva ? Icons.visibility_off : Icons.visibility,
-                          color: Colors.white,
-                        ),
-                        onPressed: _password,
-                      ),
-                    ),
-                    SizedBox(height: 11),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        AppText.titulo(
-                          'Esqueceu a senha?',
-
-                          style: TextStyle(fontSize: 18, color: Colors.white60),
-                        ),
-                        SizedBox(width: 27),
-                      ],
-                    ),
-                    SizedBox(height: 27),
-                    CustomButton.primaryButton(
-                      context: context,
-                      text: 'Entrar',
-
-                      onPressed: () {},
-                    ),
-                    SizedBox(height: 30),
-
-                    AppText.titulo(
-                      'Esqueceu a senha?',
-                      style: TextStyle(fontSize: 18, color: Colors.white60),
+                    SizedBox(width: 5),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(Icons.arrow_back_ios, color: AppColors.branco),
                     ),
                   ],
                 ),
-                const SizedBox(height: 27),
-                CustomButton.primaryButton(
-                  context: context,
-                  text: 'Entrar',
-                  onPressed: () {},
-                ),
-                const SizedBox(height: 30),
-                AppText.titulo(
-                  'ou cadastre-se com',
-                  style: TextStyle(color: Colors.white70, fontSize: 18),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AppImage.load('assets/images/facebook.png', width: 35),
-                    const SizedBox(width: 40),
-                    AppImage.load('assets/images/X-Logo.png', width: 35),
-                    const SizedBox(width: 40),
-                    AppImage.load('assets/images/google.png', width: 35),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/register');
-                  },
+                SizedBox(height: 70),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: AppText.titulo(
-                    'Cadastrar-se Agora!',
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                    'Preencha os Campos abaixo Para melhor experiência.',
                   ),
                 ),
-                const SizedBox(height: 50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    
-                    AppImage.load('assets/images/logo.png', width: 30),
-                    const SizedBox(width: 10),
-                    AppText.titulo('ALUMA'),
-                  ],
+
+                SizedBox(height: 20),
+                Form(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: AppForm.build(
+                          hintText: 'email@email.com',
+                          labelText: 'Digite Seu E-mail',
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: AppFormPassword.build(
+                          hintText: 'Digite sua Senha',
+                          labelText: 'Senha',
+                          senhaAtiva: _senhaAtiva,
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _senhaAtiva
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: Colors.white,
+                            ),
+                            onPressed: _password,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0,
+                            ),
+                            child: AppText.titulo(
+                              'Esqueceu a senha?',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: AppColors.branco,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      CustomButton.primaryButton(
+                        context: context,
+                        text: 'Entrar',
+                        onPressed: () {},
+                      ),
+
+                      SizedBox(height: 20),
+                      AppText.titulo(
+                        'ou Cadastre-se com',
+                        style: TextStyle(color: AppColors.branco, fontSize: 16),
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.branco,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Image.asset(
+                              'assets/images/facebook.png',
+                              width: 40,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.branco,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Image.asset(
+                              'assets/images/google.png',
+                              width: 40,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 25),
+                      AppText.titulo(
+                        'Não Possui uma conta ainda?',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppColors.branco,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      SizedBox(
+                        child: AppText.titulo(
+                          'Cadastra-se agora!',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: AppColors.branco,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppImage.load('assets/images/logo.png', height: 50),
+                    SizedBox(width: 8),
+                    AppText.titulo('Aluma'),
+                  ],
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
+          ],
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

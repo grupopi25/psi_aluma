@@ -1,12 +1,14 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:psi_aluma/pages/register/login.dart';
 
 class PrimaryButtonApp {
   static FloatingActionButton primaryButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/login');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Login()),
+        );
       },
       backgroundColor: Colors.white,
       child: Text(
@@ -21,7 +23,7 @@ class PrimaryButtonApp {
   }
 }
 
- class  Texto {
+class Texto {
   final String conteudo;
   Texto(this.conteudo);
 }

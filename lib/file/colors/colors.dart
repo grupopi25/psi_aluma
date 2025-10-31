@@ -1,5 +1,4 @@
-
-import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
 
 class AppColors {
   static const TextStyle white = TextStyle(
@@ -8,4 +7,7 @@ class AppColors {
     fontWeight: FontWeight.bold,
     letterSpacing: 2,
   );
+
+  static const Color azul = Color(0xFF0094DB);
+  static const Color branco = Color(0xFFFFFFFF);
 }

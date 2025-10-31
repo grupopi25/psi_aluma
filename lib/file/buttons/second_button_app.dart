@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:psi_aluma/pages/register/register_login.dart';
 
 class SecondButtonaPP {
   static Widget secondButton(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/register');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => RegisterLogin()),
+        );
       },
       style: OutlinedButton.styleFrom(
         side: const BorderSide(color: Colors.white, width: 2),
@@ -22,3 +26,10 @@ class SecondButtonaPP {
     );
   }
 }
+
+// Navigator.push(
+//   context,
+//   MaterialPageRoute(
+//     builder: (context) => SecondScreen(), // A tela para onde você está navegando
+//   ),
+// );
